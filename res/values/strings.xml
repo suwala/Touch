@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">Touch</string>
+    <string name="title">ナンバーディスプレイ</string>
+    <string name="menu_settings">Settings</string>
+    <string name="recode">記録</string>
+    <string name="rank">ランキング</string>
+    <string name="start">スタート</string>
+
+</resources>
