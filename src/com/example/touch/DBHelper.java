@@ -1,13 +1,10 @@
 package com.example.touch;
 
-import java.util.Date;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
-import android.util.Log;
 
 public class DBHelper extends SQLiteOpenHelper{
 	
@@ -23,8 +20,9 @@ public class DBHelper extends SQLiteOpenHelper{
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		
-		db.execSQL("create table recode("+
-				" date string not null,"+
+		db.execSQL("create table if not exists recode("+
+				"_id integer primary key autoincrement,"+
+				" date String not null,"+
 				" recode integer not null"+
 				");"
 			);
@@ -36,14 +34,16 @@ public class DBHelper extends SQLiteOpenHelper{
 		
 	}
 	
-	public void recode_Set(SQLiteDatabase db,Date data,long recode){
+	public void recode_Set(SQLiteDatabase db,String date,long recode){
 		ContentValues val = new ContentValues();
 		
-		val.put("date", data.toString());
+		val.put("date", date);
 		val.put("recode", recode);
 		db.insert("recode", null, val);
-		Log.d("tttttttttttt",String.valueOf(data));
-		//db.execSQL("insert into recode(data,recode) values (+100,200+);");
+	}
+	
+	public void dbClear(SQLiteDatabase db){
+		db.execSQL("DELETE FROM recode");
 	}
 
 }
