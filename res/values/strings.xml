@@ -2,10 +2,10 @@
 
     <string name="app_name">Touch</string>
     <string name="title">ナンバーディスプレイ</string>
-    <string name="menu_settings">Settings</string>
     <string name="recode">レコード</string>
     <string name="rank">ランキング</string>
     <string name="start">スタート</string>
     <string name="reco_clear">記録の消去</string>
+    <string name="menu_settings">データの消去</string>
 
 </resources>

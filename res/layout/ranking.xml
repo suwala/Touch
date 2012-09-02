@@ -9,14 +9,28 @@
         android:id="@+id/ran_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-    
-    <Button
-        android:id="@+id/html1"
-        android:tag="tag_btn1"
-        android:text="ランキング登録"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="rankUpload"/>
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/html1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="rankUpload"
+            android:tag="tag_btn1"
+            android:text="ランキング登録" />
+        
+        <TextView
+            android:id="@+id/record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textSize="15sp" />
+
+    </TableRow>
     
     <WebView 
         android:id="@+id/webview"

@@ -4,14 +4,14 @@
     android:gravity="center_vertical"
     android:background="#FFF7E1"
     android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
-
+
     <FrameLayout
         android:id="@+id/Frame"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp" >
+        android:layout_marginTop="10dp" >
 
         <ProgressBar
             android:id="@+id/progressBar1"
@@ -55,14 +55,13 @@
         android:text="00:00"
         android:textSize="25sp" />
 </TableRow>
-
+
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="10dp"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     android:background="#4bc3cf" >
 
     <TableLayout
@@ -86,7 +85,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
-                android:onClick="onButton" />
+                android:onClick="onButton" 
+                android:textSize="20sp"/>
 
             <Button
                 android:id="@+id/button2"
@@ -94,7 +94,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
-                android:onClick="onButton" />
+                android:onClick="onButton"                 
+                android:textSize="20sp"/>
 
             <Button
                 android:id="@+id/button3"
@@ -102,6 +103,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
+                
+                android:textSize="20sp"
                 android:onClick="onButton" />
 
             <Button
@@ -110,6 +113,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
+                
+                android:textSize="20sp"
                 android:onClick="onButton" />
         </TableRow>
 
@@ -128,6 +133,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
+                
+                android:textSize="20sp"
                 android:onClick="onButton" />
 
             <Button
@@ -136,6 +143,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
+                
+                android:textSize="20sp"
                 android:onClick="onButton" />
 
             <Button
@@ -144,6 +153,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
+                
+                android:textSize="20sp"
                 android:onClick="onButton" />
 
             <Button
@@ -151,6 +162,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
+                
+                android:textSize="20sp"
                 android:layout_weight="1"
                 android:onClick="onButton" />
         </TableRow>
@@ -170,6 +183,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
+                
+                android:textSize="20sp"
                 android:onClick="onButton" />
 
             <Button
@@ -178,6 +193,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
+                
+                android:textSize="20sp"
                 android:onClick="onButton" />
 
             <Button
@@ -186,6 +203,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
+                
+                android:textSize="20sp"
                 android:onClick="onButton" />
 
             <Button
@@ -194,6 +213,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
+                
+                android:textSize="20sp"
                 android:onClick="onButton" />
         </TableRow>
 
@@ -211,6 +232,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
+                
+                android:textSize="20sp"
                 android:layout_weight="1"
                 android:onClick="onButton" />
 
@@ -220,6 +243,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
+                
+                android:textSize="20sp"
                 android:onClick="onButton" />
 
             <Button
@@ -228,6 +253,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
+                
+                android:textSize="20sp"
                 android:onClick="onButton" />
 
             <Button
@@ -235,6 +262,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
+                
+                android:textSize="20sp"
                 android:layout_weight="1"
                 android:onClick="onButton" />
         </TableRow>
@@ -254,6 +283,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
+                
+                android:textSize="20sp"
                 android:layout_weight="1"
                 android:onClick="onButton" />
 
@@ -262,6 +293,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
+                
+                android:textSize="20sp"
                 android:layout_weight="1"
                 android:onClick="onButton" />
 
@@ -271,6 +304,8 @@
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
                 android:layout_weight="1"
+                
+                android:textSize="20sp"
                 android:onClick="onButton" />
 
             <Button
@@ -278,6 +313,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_margin="3dip"
+                
+                android:textSize="20sp"
                 android:layout_weight="1"
                 android:onClick="onButton" />
         </TableRow>

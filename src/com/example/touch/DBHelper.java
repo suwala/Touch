@@ -45,5 +45,7 @@ public class DBHelper extends SQLiteOpenHelper{
 	public void dbClear(SQLiteDatabase db){
 		db.execSQL("DELETE FROM recode");
 	}
+	
+	
 
 }

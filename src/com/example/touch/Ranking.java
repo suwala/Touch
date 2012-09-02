@@ -1,6 +1,7 @@
 package com.example.touch;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.ScaleGestureDetector;
 import android.view.View;
@@ -30,9 +32,14 @@ import android.webkit.WebViewClient;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class Ranking extends Activity {
 
-	public static String url = "http://192.168.11.16/touch2.php";
+	File file = Environment.getExternalStorageDirectory();
+	
+	
+	public String url = "file:///sdcard/download/touch.htm";
+	//public static String url = "http://suwala.dip.jp/touch2.php";
 	public int recodeTime;
 	
 	@Override
@@ -50,6 +57,9 @@ public class Ranking extends Activity {
 		
 		this.webView();
 		
+		//Textviewに登録したスコアを表示
+		TextView tv = (TextView)findViewById(R.id.record);
+		tv.setText("現在の登録スコア　"+String.valueOf(recodeTime/1000/60)+"."+String.valueOf(recodeTime%1000)+"Sec");
 		
 	}
 	
@@ -73,7 +83,7 @@ public class Ranking extends Activity {
         	}
         });
         
-        webview.loadUrl("http://192.168.11.16/touch.php");
+        webview.loadUrl(this.url);
 		webview.reload();//既に開いてた場合は更新されない？ぽいので、開いたページをリロード
 	}
 	
@@ -81,6 +91,7 @@ public class Ranking extends Activity {
 		
 		//クライアント設定
 		HttpClient httpclient = new DefaultHttpClient();
+		this.url = "http://suwala.dip.jp/touch2.php";
 		HttpPost httppost = new HttpPost(url);
 		
 		//dbを開く
@@ -88,8 +99,11 @@ public class Ranking extends Activity {
 		SQLiteDatabase db = dbh.getReadableDatabase();
 		Cursor c = db.query("recode", new String[] {"date","recode"}, null,null,null,null,"recode ASC");
 		boolean isEof = c.moveToFirst();
+		
 				
 		if(isEof){
+			
+			
 			//POST送信するデータを格納
 			List<NameValuePair> nameValuePair = new ArrayList<NameValuePair>(1);
 			nameValuePair.add(new BasicNameValuePair("name", MainActivity.getUserName()));
@@ -103,13 +117,11 @@ public class Ranking extends Activity {
 		
 				try
 				{
-
 					//POST送信
 					httppost.setEntity(new UrlEncodedFormEntity(nameValuePair,HTTP.UTF_8));
 					HttpResponse response = httpclient.execute(httppost);
 					ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 					response.getEntity().writeTo(byteArrayOutputStream);
-
 					//鯖からの応答を取得
 					if(response.getStatusLine().getStatusCode() == HttpStatus.SC_OK){
 

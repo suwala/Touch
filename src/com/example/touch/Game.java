@@ -101,7 +101,7 @@ public class Game extends Activity {
 					
 					c.moveToFirst();
 					Log.d("db",String.valueOf(progress.getHeight()));
-					progress.setMax(add+3000);
+					progress.setMax(add+5000);
 					progress.setSecondaryProgress(c.getInt(1));
 					
 				

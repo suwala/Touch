@@ -220,7 +220,6 @@ public class Recode extends Activity {
 				tv.setText(c.getString(0)+" | "+String.format("%01d.%03dSec",c.getInt(1)/1000,c.getInt(1)%1000));
 				isEof = c.moveToNext();
 			}else{
-				Log.d("ra","aaaaaaa");
 				tv.setText(null);
 			}
 			i++;

@@ -6,11 +6,13 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -19,9 +21,42 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-	
-	
+
 	private static String userName=null;
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+		if(item.getItemId() == R.id.menu_settings){
+			new AlertDialog.Builder(this).setTitle("全てのデータをクリアしますか？")
+			.setPositiveButton("はい", new DialogInterface.OnClickListener(){
+				@Override
+        		public void onClick(DialogInterface dialog, int whichButton){
+					DBHelper dbh = new DBHelper(MainActivity.this);
+					SQLiteDatabase db = dbh.getReadableDatabase();
+					dbh.dbClear(db);
+					db.close();
+					MainActivity.userName = null;
+					
+				}
+			})
+		.setNegativeButton("いいえ", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO 自動生成されたメソッド・スタブ
+					
+				}
+			})
+			.show();
+		}
+		
+		
+		return super.onOptionsItemSelected(item);
+	}
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
